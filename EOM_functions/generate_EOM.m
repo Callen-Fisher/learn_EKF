@@ -32,8 +32,8 @@ accelerations.PCOM(:,2)=jacobian(velocities.PCOM(:,2),q)*dq+jacobian(velocities.
 T=1/2*constraints.m1*(velocities.PCOM(:,1).')*velocities.PCOM(:,1);
 T=T+1/2*constraints.m2*(velocities.PCOM(:,2).')*velocities.PCOM(:,2);
 % rotational kinetic energy
-T=T+1/2*([0;q(1);0].')*J_1*[0;q(1);0];
-T=T+1/2*([0;q(2);0].')*J_2*[0;q(2);0];
+T=T+1/2*([0;dq(1);0].')*J_1*[0;dq(1);0];
+T=T+1/2*([0;dq(2);0].')*J_2*[0;dq(2);0];
 % potential energy
 V=constraints.m1*constraints.g*positions.PCOM(3,1);
 V=V+constraints.m1*constraints.g*positions.PCOM(3,2);
